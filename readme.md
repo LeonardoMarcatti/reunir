@@ -2,8 +2,6 @@
 <h1>Desafio NetWall</h1>
 <h2>Introdução</h2>
 <p>Este é um desafio criado pela empresa Net Wall para o cargo de desenvolvedor full stack. Nele foram utilizadas as tecnologias Laravel e React no back end e front end respectivamente.</p>
-
-
 <h2>Instalação e Configuração</h2>
 <h3>Laravel</h3>
 <h4>Introdução</h4>
@@ -33,8 +31,9 @@ comando composer install</p>
    </li>
    <li>Verifique se a pasta storage possui permissão de escrita e leitura. Caso não possua ajuste as permissões.</li>
    <li>
-      Ainda no, terminal dentro da pasta backend, execute o comando php artisan migrate e depois php artisan db:seed. Esses comandos criarão o banco de dados, as tabelas bem como criará um usuário administrador do sistema e três salas de reuniões que podem ser alteradas mais tarde.
+      Ainda no terminal, dentro da pasta backend, execute o comando php artisan migrate e depois php artisan db:seed. Esses comandos criarão o banco de dados, as tabelas bem como criará um usuário administrador do sistema e três salas de reuniões que podem ser alteradas mais tarde.
    </li>
+   <li>Execute o comando php artisan serve --host=ip_do_servidor para iniciar o backend</li>
 </ol>
 
 <h2>Front End</h2>
