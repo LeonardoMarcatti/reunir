@@ -1,18 +1,16 @@
-import React from 'react'
-import {createBrowserRouter, RouterProvider} from 'react-router-dom'
-import Root from './pages/Root'
-import Login from './pages/Login'
+import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import Login from './pages/Login.'
+import Logup from './pages/Logup'
+import {saveUser} from './utils/script'
+const routes = createBrowserRouter([
+   {
+      path: '/', children:[
+         {index: true, element: <Login/>},
+         {path: 'logup', action: saveUser, element: <Logup/>},
+      ]
+   }
+])
 
-const App =() => {
-   const routes = createBrowserRouter([
-      {
-         path: '/', element: <Root/>, children: [
-            {index: true, element: <Login />}
-         ]
-      }
-   ])
-
-  return <RouterProvider router={routes} />
-}
+const App = () => <RouterProvider router={routes}/>
 
 export default App

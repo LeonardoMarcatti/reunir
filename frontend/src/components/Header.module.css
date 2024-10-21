@@ -1,8 +1,0 @@
-#header {
-   background-color: rgb(28, 27, 27);
-   display: flex;
-   flex-flow: row nowrap;
-   justify-content: space-between;
-   align-items: center;
-   padding: 0 10px;
-}
