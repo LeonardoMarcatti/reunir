@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\LogupRequest;
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
@@ -32,5 +32,10 @@ class AuthController extends Controller
       }
 
       return \response()->json(['status' => false], 400);
+    }
+
+    public function checkUser(Request $request) : object
+    {
+        return $request->user();
     }
 }

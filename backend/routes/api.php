@@ -5,8 +5,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PagesController;
 
 Route::controller(AuthController::class)->group(function(){
-    Route::post('/login', 'login')->name('login');
-    Route::post('/logup', 'logup')->name('logup');
+    Route::post('/login', 'login');
+    Route::post('/logup', 'logup');
+    Route::get('/checkUser', 'checkUser')->middleware('auth:sanctum');
 });
 
 Route::controller(PagesController::class)->group(function(){

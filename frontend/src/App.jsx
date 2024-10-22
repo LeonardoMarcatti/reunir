@@ -1,12 +1,21 @@
+import React, {lazy, Suspense } from "react";
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import Login from './pages/Login.'
 import Logup from './pages/Logup'
-import {saveUser} from './utils/script'
+import Home from './pages/Home'
+import ErrorPage from './pages/ErrorPage'
+import {saveUser, login, checkUser} from './utils/script'
+
+const Root = lazy(() => import('./pages/Root'))
+
 const routes = createBrowserRouter([
    {
-      path: '/', children:[
-         {index: true, element: <Login/>},
+      path: '/', errorElement: <ErrorPage/>, children:[
+         {index: true, action: login, element: <Login/>},
          {path: 'logup', action: saveUser, element: <Logup/>},
+         {path: 'app/', loader: checkUser, element: <Suspense fallback={<p>Aguarde...</p>}><Root/></Suspense>, children: [
+            {index: true, element: <Home/>}
+         ]}
       ]
    }
 ])

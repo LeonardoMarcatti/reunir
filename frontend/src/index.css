@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   min-height: 100vh;
+   grid-template-rows: 50px minmax(calc(100vh - 80px), auto) 30px;
+}
+
+header {
+   grid-column: 1/6;
+}
+
+footer {
+   grid-column: 1/6;
+   display: flex;
+   flex-flow: row nowrap;
+   align-items: center;
+   justify-content: center;
+}
+
+aside {
+   grid-column: 1/2;
+}
+
+main {
+   background-color: black;
+   color: white;
+   grid-column: 2/6;
+}
