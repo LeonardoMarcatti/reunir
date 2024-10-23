@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class MeetingModel extends Model
 {
-protected $table = 'rooms';
-    protected $fillable = ['name', 'maxPeople'];
+protected $table = 'meetings';
+    protected $fillable = ['room_id', 'user_id', 'start_at', 'end_at', 'title'];
 }

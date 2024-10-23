@@ -39,5 +39,9 @@ comando composer install</p>
 <h2>Front End</h2>
 
 <h2>Back End</h2>
+<p>API</p>
+<p>Content-type = Application/Json</p>
+<p>Accept = Application/Json</p>
+<p>API</p>
 
 <h2>Banco de Dados</h2>

@@ -34,8 +34,13 @@ class AuthController extends Controller
       return \response()->json(['status' => false], 400);
     }
 
-    public function checkUser(Request $request) : object
+    public function checkUser(Request $request)
     {
         return $request->user();
+    }
+
+    public function logout(Request $request) : bool
+    {
+        return $request->user()->tokens()->delete();
     }
 }

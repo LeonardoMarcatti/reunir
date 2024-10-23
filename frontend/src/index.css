@@ -30,3 +30,11 @@ main {
    color: white;
    grid-column: 2/6;
 }
+
+dialog::backdrop{
+   background-color: rgba(30,30,30, 0.9);
+}
+
+dialog:not([open]) {
+  display: none;
+}

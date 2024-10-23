@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->dateTime('start_at');
             $table->dateTime('end_at');
+            $table->string('title');
             $table->timestamps();
         });
 

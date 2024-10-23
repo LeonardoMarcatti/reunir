@@ -6,9 +6,10 @@ const Header = memo(function Header({user}) {
       <h1 className="text-4xl">Reunir</h1>
       <h2>{user.name}</h2>
       <nav>
-         <Link to='home' className="mx-2 p-0">Home</Link>
+         <Link to='/app' className="mx-2 p-0">Home</Link>
          <Link to='rooms' className="mx-2 p-0">Salas</Link>
          <Link to='myMeetings' className="mx-2 p-0">Minhas Reservas</Link>
+         <Link to='logout' className="mx-2 p-0"><i className="fa-solid fa-power-off text-red-400"></i></Link>
       </nav>
    </header>
 })
