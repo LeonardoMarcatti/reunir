@@ -12,10 +12,12 @@ const EditRoom = memo(function EditRoom(){
    const errorRef = useRef()
 
    if (result != undefined && result.status) {
+      errorRef.current.close()
       successRef.current.open()
    }
 
    if (result != undefined && !result.status) {
+      successRef.current.close()
       errorRef.current.open()
    }
    

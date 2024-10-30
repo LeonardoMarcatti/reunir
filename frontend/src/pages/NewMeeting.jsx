@@ -24,10 +24,12 @@ const NewMeeting = memo(function NewMeeting() {
    }
 
    if (result != undefined && result.status) {
+      errorRef.current.close()
       successRef.current.open()
    }
 
    if (result != undefined && !result.status) {
+      successRef.current.close()
       errorRef.current.open()
    }
 
@@ -36,7 +38,6 @@ const NewMeeting = memo(function NewMeeting() {
    useEffect(() => {
      mindDates()
    }, [])
-   
 
 
    return <>

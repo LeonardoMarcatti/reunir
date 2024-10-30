@@ -5,15 +5,16 @@ import Modal from "../components/Modal";
 
 const MeetingRooms = memo(function MeetingRooms() {
    const rooms = useLoaderData()
-   const modalRef = useRef()
    const navigate = useNavigate()
+   const modalRef = useRef()
    const [selectedRoomId, setSelectedRoomId] = useState(null);
 
-   useEffect(() => {
+      useEffect(() => {
       if (rooms && rooms.status === false) {
          navigate('/app');
       }
    }, [rooms, navigate]);
+
    
    const showModal = (id) => {
       setSelectedRoomId(id)
