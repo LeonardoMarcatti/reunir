@@ -1,23 +1,37 @@
 import React, {useRef} from "react";
 import {Form, Link, useActionData} from 'react-router-dom'
-import Input from "../components/Input";
+import Input from "../components/UI/Input";
 import Footer from '../components/Footer';
 import Modal from '../components/Modal'
+import {getSentencePart} from '../utils/diverse'
 
 const Logup = () => {
    const data = useActionData()
-   const modalRef = useRef()
    console.log(data);
    
+   const successRef = useRef()
+   const errorRef = useRef()
+
 
    if (data != undefined && data.status) {
-      modalRef.current.open()
+      errorRef.current.close()
+      successRef.current.open()
+   }
+
+   if (data != undefined && !data.status) {
+      successRef.current.close()
+      errorRef.current.open()
    }
    
    return <>
-      <Modal ref={modalRef}>
+      <Modal ref={successRef} type="successModal">
          <h1 className="text-green-800 font-bold text-4xl">Sucesso!</h1>
          <h2 className="text-green-800 text-2xl">Usuário criado.</h2>
+      </Modal>
+      <Modal ref={errorRef} type="errorModal" logup={true}>
+         <h1 className="text-red-800 font-bold text-4xl">Erro</h1>
+         <h2 className="text-red-800 text-2xl">Usuário não pode ser criado.</h2>
+         <h3 className="text-red-800 text-xl">{data != undefined && !data.status && getSentencePart(data.message)}</h3>
       </Modal>
       <header className="bg-slate-600">
          <h1 className="text-4xl font-bold text-white">Reunir</h1>

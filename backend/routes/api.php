@@ -7,13 +7,25 @@ use App\Http\Controllers\PagesController;
 Route::controller(AuthController::class)->group(function(){
     Route::post('/login', 'login')->name('login');
     Route::post('/logup', 'logup')->name('logup');
-    Route::get('/checkUser', 'checkUser')->middleware('auth:sanctum');
-    Route::get('/logout', 'logout')->middleware('auth:sanctum');
+    Route::middleware(['auth:sanctum'])->group(function(){
+        Route::get('/checkUser', 'checkUser');
+        Route::get('/logout', 'logout');
+    });
 });
 
 Route::controller(PagesController::class)->group(function(){
-    Route::get('/getMeetings', 'getMeetings')->name('getMeetings')->middleware('auth:sanctum');
-    Route::get('/getMeetingRooms', 'getMeetingRooms')->name('getMeetingRooms')->middleware('auth:sanctum');
-    Route::post('/newMeeting', 'newMeeting')->name('newMeeting')->middleware('auth:sanctum');
+    Route::middleware(['auth:sanctum'])->group(function(){
+        Route::get('/getMeetings', 'getMeetings');
+        Route::get('/getMyReserves', 'getMyReserves');
+        Route::get('/getMeetingRooms', 'getMeetingRooms')->name('getMeetingRooms');
+        Route::post('/newMeeting', 'newMeeting');
+        Route::put('/updateMeeting', 'updateMeeting');
+        Route::put('/updateRoom', 'updateRoom');
+        Route::delete('/deleteRoom', 'deleteRoom');
+        Route::post('/createRoom', 'createRoom');
+    });
+    Route::post('/getMeetingDetails', 'getMeetingDetails');
+    Route::post('/getNotAvailableDates', 'getNotAvailableDates');
+    Route::delete('/deleteMeeting', 'deleteMeeting')->name('delete');
 });
 
