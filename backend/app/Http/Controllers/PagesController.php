@@ -59,7 +59,7 @@ class PagesController extends Controller
         return true;
     }
 
-    public function newMeeting(Request $request): JsonResponse
+    public function newMeeting(MeetingRequest $request): JsonResponse
     {
         $result = $this->checkRoomAvailability($request->room_id, $request->start_at, $request->end_at);
 

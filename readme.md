@@ -14,10 +14,11 @@
 <ol>
    <li>
       <b>APP_URL=endereço de seu sistema até a pasta public</b>
+      <br/>
       <small>Verifique se a conexão é HTTP ou HTTPS</small>
    </li>
    <li>
-      APP_TIMEZONE=America/Sao_Paulo
+      <b>APP_TIMEZONE=America/Sao_Paulo</b>
    </li>
    <li>
       <b>Banco de dados</b>
@@ -71,5 +72,6 @@
    </ul>
 <h3>POSTMAN/INSOMNIA</h3>
 <p>Para utilizar esses aplicativos é necessário configurar o headers pois o tipo de dados que são trafegados são strings JSON.</p>
-<p>Content-type = Application/Json</p>
-<p>Accept = Application/Json</p>
+<p>Para cada endpoint da API deve ser criada uma reuqisição no Postmam/Insomnia</p>
+<p>Content-type: Application/Json</p>
+<p>Accept: Application/Json</p>

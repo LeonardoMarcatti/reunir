@@ -45,9 +45,9 @@ const NewMeeting = memo(function NewMeeting() {
          <h1 className="text-green-800 font-bold text-4xl">Sucesso!</h1>
          <h2 className="text-green-800 text-2xl">Reunião marcada.</h2>
       </Modal>
-      <Modal ref={errorRef} type='errorModal' callBack={refreshPage}>
-         <h1 className="text-red-800 font-bold text-4xl">Error!</h1>
-         <h2 className="text-red-800 text-2xl">Dia e hora não diposnível.</h2>
+      <Modal ref={errorRef} type='errorModal' callBack={refreshPage} logup={true}>
+         <h1 className="text-red-800 font-bold text-4xl">Erro!</h1>
+         <h2 className="text-red-800 text-2xl text-center">Verifique os campos e tente novamente</h2>
       </Modal>
       <main className="flex flex-row justify-between items-center pt-2">
          <div className="w-2/3 flex flex-col justify-center items-center p-2">
